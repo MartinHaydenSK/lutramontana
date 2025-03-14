@@ -20,8 +20,10 @@ const linkToBackend = "https://lutramontana-backend.vercel.app";
 const linkToFrontend = "https://lutramontana-frontend.vercel.app";
 app.use(
   cors({
-    origin: "https://lutramontana-frontend.vercel.app",
-    credentials: true,
+    origin: "https://lutramontana-frontend.vercel.app", // Opravená URL bez lomky
+    credentials: true, // Ak posielaš cookies alebo autorizácie cez požiadavky
+    methods: ["GET", "POST", "PUT", "DELETE"], // Povolené metódy, ak sa používajú
+    allowedHeaders: ["Content-Type", "Authorization"], // Povolené hlavičky
   })
 );
 
@@ -332,14 +334,15 @@ app.post("/reservation-confirmation", async (req, res) => {
 });
 
 app.get("/reservations", async (req, res) => {
-  try {
-    const findAllReservations = await ReservationTable.find();
-    if (findAllReservations) {
-      res.status(200).json(findAllReservations);
-    }
-  } catch (error) {
-    console.log(error.message);
-  }
+  res.send("get method");
+  // try {
+  //   const findAllReservations = await ReservationTable.find();
+  //   if (findAllReservations) {
+  //     res.status(200).json(findAllReservations);
+  //   }
+  // } catch (error) {
+  //   console.log(error.message);
+  // }
 });
 
 //Method delete
