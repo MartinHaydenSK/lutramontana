@@ -18,6 +18,15 @@ const dbPrefix =
   "mongodb+srv://MartinHayden:nt2f73NNQH119I1o@cluster0.ar6z1.mongodb.net/chata_web";
 const linkToBackend = "https://lutramontana-backend.vercel.app";
 const linkToFrontend = "https://lutramontana-frontend.vercel.app";
+app.use(express.json());
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
 //Transporter
 const transporter = nodemailer.createTransport({
@@ -655,13 +664,3 @@ app.get("/get-reviews", async (req, res) => {
     }
   }
 });
-
-app.use(express.json());
-app.use(
-  cors({
-    origin: "*", // Opravená URL bez lomky
-    credentials: true, // Ak posielaš cookies alebo autorizácie cez požiadavky
-    methods: ["GET", "POST", "PUT", "DELETE"], // Povolené metódy, ak sa používajú
-    allowedHeaders: ["Content-Type", "Authorization"], // Povolené hlavičky
-  })
-);
