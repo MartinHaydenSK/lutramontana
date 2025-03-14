@@ -16,11 +16,11 @@ const port = process.env.PORT || 3000;
 const adminEmail = "martinhayden303@gmail.com";
 const dbPrefix =
   "mongodb+srv://MartinHayden:nt2f73NNQH119I1o@cluster0.ar6z1.mongodb.net/chata_web";
-const linkToBackend = "https://lutramontana-backend.vercel.app/";
-const linkToFrontend = "https://lutramontana-frontend.vercel.app/";
+const linkToBackend = "https://lutramontana-backend.vercel.app";
+const linkToFrontend = "https://lutramontana-frontend.vercel.app";
 app.use(
   cors({
-    origin: "https://lutramontana-frontend.vercel.app/",
+    origin: "https://lutramontana-frontend.vercel.app",
     credentials: true,
   })
 );
