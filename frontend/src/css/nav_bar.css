@@ -1,0 +1,115 @@
+#root > nav {
+  width: 100%;
+  position: static;
+  padding: 10px 20px 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--nav-bar-color);
+  z-index: 1000;
+}
+
+#root > nav #bars-icon {
+  display: none;
+  font-size: 2.4rem;
+  color: white;
+}
+#root > nav ul {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  width: 60%;
+  justify-content: space-around;
+}
+
+#root > nav ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 7px;
+}
+
+#root > nav ul li .fa,
+#root > nav ul li .svg-inline--fa {
+  font-size: 1.6rem;
+  color: white;
+}
+#root > nav ul li a {
+  position: relative;
+  text-decoration: none;
+  font-family: "subtitle-font";
+  font-size: 20px;
+  color: white;
+}
+
+#root > nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 4px;
+  background-color: white;
+}
+
+#root > nav ul li a:hover::after {
+  transition: 0.4s all ease;
+  width: 100%;
+}
+
+#root .alert-message {
+  position: absolute;
+  right: 0;
+  top: 91.99px;
+  padding: 40px;
+  margin: 5px;
+  background-color: white;
+  color: black;
+  z-index: 100;
+}
+
+.active-link::after {
+  width: 100% !important;
+}
+
+/* Responsivity */
+
+@media (max-width: 1300px) {
+  #root nav ul {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1000px) {
+  #root > nav {
+    height: fit-content;
+    flex-direction: column;
+  }
+  #root > nav #bars-icon {
+    display: block;
+  }
+  #root > nav ul {
+    display: none;
+  }
+
+  #root > nav > span {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (max-width: 400px) {
+  #root > nav > span #bars-icon {
+    font-size: 2rem;
+  }
+}
+
+#root > nav .open-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 400px;
+}

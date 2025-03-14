@@ -1,0 +1,59 @@
+.reservation {
+  position: relative;
+}
+
+.reservation h2 {
+  padding: 12px 20px 12px 20px;
+}
+
+.backgound-image {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url("");
+  background-position: center;
+  background-size: cover;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+.calendar-and-form {
+  z-index: 1;
+  display: flex;
+
+  flex-direction: row-reverse;
+}
+
+.calendar-and-form > span h2 {
+  padding: 0 16px 0;
+}
+
+.calendar-and-form > div {
+  width: 50%;
+  display: flex;
+}
+
+/* Responsivity */
+
+@media (max-width: 800px) {
+  .reservation h2 {
+    text-align: center;
+  }
+  .calendar-and-form {
+    flex-direction: column;
+  }
+  .calendar-and-form > div {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .reservation h2 {
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,204 @@
+form {
+  width: 80%;
+
+  height: fit-content;
+  min-width: 350px;
+  min-height: 80vh;
+  padding: 0 15px 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: white;
+}
+
+form input {
+  height: 40px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #e1e1e1;
+}
+
+form article {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+form article .row {
+  margin: 5px 0 5px 0;
+  height: fit-content;
+  display: flex;
+}
+
+form article .row span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+
+form article .row input {
+  width: 100%;
+}
+
+form article .row span:nth-child(2) {
+  margin-left: 10px;
+}
+
+form > button {
+  margin: 0 0 0 0;
+  padding: 10px;
+  text-transform: uppercase;
+  border: none;
+  background-color: var(--form-color);
+  color: white;
+  font-family: "title-font";
+  border-radius: 30px;
+}
+
+form > button:hover {
+  cursor: pointer;
+  background-color: var(--nav-bar-color);
+  color: white;
+}
+
+form textarea {
+  background-color: #e1e1e1;
+  padding: 5px;
+}
+
+/* Form text */
+form > span {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+form p {
+  text-align: left;
+  font-size: 16px;
+}
+
+/* Review-form */
+.review-form h1 {
+  text-align: center;
+}
+.review-form {
+  min-height: 60svh;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.review-form form {
+  padding: 20px;
+  max-width: 500px;
+  min-width: 400px;
+  min-height: fit-content;
+  height: fit-content;
+}
+
+.review-form .rating-stars {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.review-form .rating-stars span {
+  flex-direction: row;
+}
+
+/* Errors */
+
+.sending-email-error,
+.sending-email-response {
+  /* background-color: rgb(200, 9, 9); */
+  border: solid 2px rgb(200, 9, 9);
+  padding: 8px;
+  font-size: 14px;
+  font-family: "title-font";
+  color: rgb(200, 9, 9);
+  margin-bottom: 10px;
+}
+
+.error-message-form {
+  font-size: 14px;
+  color: rgb(200, 9, 9);
+  padding: 4px 0 4px 0;
+}
+
+.review-form .sending-email-response {
+  min-width: 500px;
+  margin: 25px 0 0 0;
+  text-align: center;
+}
+.sending-email-response {
+  border: solid 2px var(--form-color);
+  color: var(--form-color);
+}
+
+/* Responsivity */
+@media (max-width: 1200px) {
+  form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  form {
+    width: 70%;
+  }
+
+  form > span {
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  form {
+    border-radius: 10px;
+    min-width: 0px;
+    width: 100%;
+  }
+
+  .review-form {
+    margin: 0;
+    padding: 0px;
+    padding-top: 20px;
+  }
+  .review-form form {
+    width: 100%;
+    min-width: 0;
+  }
+
+  form article .row {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  form article .row span:nth-child(2) {
+    margin-left: 0px;
+  }
+
+  form button {
+    padding: 7px;
+    font-size: 12px;
+  }
+}

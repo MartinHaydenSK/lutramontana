@@ -1,0 +1,10 @@
+.update-reservation-interface {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.update-reservation-interface form {
+  width: 50%;
+  justify-content: space-around;
+}

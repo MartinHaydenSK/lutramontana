@@ -1,0 +1,188 @@
+.price-list {
+  width: 100%;
+}
+
+.price-list h2,
+.price-list p {
+  margin-left: 15px;
+}
+
+.price-list article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.price-list article:nth-child(3) {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.price-list article:nth-child(even) {
+  background-color: var(--grey-color);
+}
+
+.price-list article .list-of-prices {
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  min-height: 300px;
+  width: fit-content;
+  padding: 15px;
+  width: 100%;
+}
+
+.price-list .sperate-container-prices {
+  min-height: 376.8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.price-list .sperate-container-prices .list-of-prices {
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 500px;
+  max-width: 500px;
+}
+
+.price-list article .list-of-prices .prticular-price {
+  min-width: 220px;
+  max-width: 220px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--form-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 270px;
+}
+.price-list article .list-of-prices .prticular-price ul {
+  line-height: 30px;
+}
+.price-list article .list-of-prices .prticular-price ul li {
+  color: white;
+  text-align: left;
+}
+
+.price-list article .list-of-prices .prticular-price span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.price-list article .list-of-prices .prticular-price span h3,
+.price-list article .list-of-prices .prticular-price span p {
+  color: white;
+}
+
+@media (max-width: 1200px) {
+  h2 {
+    font-size: 32px;
+    font-family: "subtitle-font";
+  }
+
+  h3 {
+    font-size: 40px;
+    font-family: "subtitle-font";
+  }
+
+  h4 {
+    font-size: 35px;
+  }
+
+  p,
+  li {
+    font-size: 18px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  input,
+  textarea {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1100px) {
+  .price-list article {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 800px) {
+  h2 {
+    text-align: center;
+    font-size: 32px;
+    font-family: "subtitle-font";
+  }
+
+  h3 {
+    font-size: 40px;
+    font-family: "subtitle-font";
+  }
+
+  h4 {
+    font-size: 35px;
+  }
+
+  p,
+  li {
+    font-size: 18px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  input,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 550px) {
+  .price-list .sperate-container-prices .list-of-prices {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 400px) {
+  h2 {
+    font-size: 32px;
+    font-family: "subtitle-font";
+  }
+
+  h3 {
+    font-size: 40px;
+    font-family: "subtitle-font";
+  }
+
+  h4 {
+    font-size: 35px;
+  }
+
+  p,
+  li {
+    font-size: 18px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  input,
+  textarea {
+    font-size: 16px;
+  }
+}
