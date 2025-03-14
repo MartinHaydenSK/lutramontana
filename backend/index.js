@@ -19,14 +19,7 @@ const dbPrefix =
 const linkToBackend = "https://lutramontana-backend.vercel.app";
 const linkToFrontend = "https://lutramontana-frontend.vercel.app";
 app.use(express.json());
-app.use(
-  cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
-
+app.use(cors({}));
 //Transporter
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -84,8 +77,6 @@ const connectToDatabase = () => {
   }
 };
 connectToDatabase();
-
-app.use(express.static(path.join(__dirname, "images")));
 
 //Methods post
 // app.post("/send-email", async (req, res) => {
@@ -169,11 +160,11 @@ app.use(express.static(path.join(__dirname, "images")));
 //   }
 // });
 
-app.get("/h", (req, res) => {
+app.get("/", (req, res) => {
   res.send("hello world");
 });
 //Methods get
-app.post("/reservation-confirmation", async (req, res) => {
+app.post("/api/reservation-confirmation", async (req, res) => {
   const {
     dateStart,
     dateEnd,
@@ -333,7 +324,7 @@ app.post("/reservation-confirmation", async (req, res) => {
   }
 });
 
-app.get("/reservations", async (req, res) => {
+app.get("/api/reservations", async (req, res) => {
   res.send("get method");
   // try {
   //   const findAllReservations = await ReservationTable.find();
