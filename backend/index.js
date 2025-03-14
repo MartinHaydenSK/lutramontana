@@ -16,28 +16,15 @@ const port = process.env.PORT || 3000;
 const adminEmail = "martinhayden303@gmail.com";
 const dbPrefix =
   "mongodb+srv://MartinHayden:nt2f73NNQH119I1o@cluster0.ar6z1.mongodb.net/chata_web";
-const linkToBackend = "https://localhost:3000";
-const linkToFrontend = "https://lutramontana.sk";
+const linkToBackend = "https://lutramontana-backend.vercel.app/";
+const linkToFrontend = "https://lutramontana-frontend.vercel.app/";
 app.use(
   cors({
-    origin: "https://lutramontana.sk",
+    origin: "https://lutramontana-frontend.vercel.app/",
     credentials: true,
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    allowedHeaders: "Origin,X-Requested-With,Content-Type,Accept,Authorization",
   })
 );
 
-// 🔹 Manuálne pridanie hlavičiek CORS, ak to stále nefunguje
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://lutramontana.sk");
-  res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  res.header("Access-Control-Allow-Credentials", "true");
-  next();
-});
 //Transporter
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
