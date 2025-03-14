@@ -21,7 +21,9 @@ const linkToFrontend = "https://lutramontana-frontend.vercel.app";
 app.use(express.json());
 app.use(
   cors({
-    origin: "*",
+    origin: "https://lutramontana-frontend.vercel.app", // Povolenie len pre frontend
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type, Authorization",
   })
 );
 //Transporter
@@ -168,7 +170,7 @@ app.get("/", (req, res) => {
   res.send("hello world");
 });
 //Methods get
-app.post("/api/reservation-confirmation", async (req, res) => {
+app.post("/reservation-confirmation", async (req, res) => {
   const {
     dateStart,
     dateEnd,
@@ -332,7 +334,9 @@ app.get("/reservations", async (req, res) => {
   try {
     const findAllReservations = await ReservationTable.find();
     if (findAllReservations) {
-      res.status(200).json(findAllReservations);
+      res.send(findAllReservations);
+    } else {
+      res.send("we have database");
     }
   } catch (error) {
     console.log(error.message);
