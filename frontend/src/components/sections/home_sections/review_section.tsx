@@ -48,6 +48,7 @@ const ReviewSection: React.FC = () => {
       const data = await response.data;
       if (data) {
         setReviews(data);
+        console.log(data, "data");
         setSwiperKey((prev) => prev + 1);
       }
     } catch (error) {

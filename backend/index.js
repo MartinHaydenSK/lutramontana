@@ -329,15 +329,14 @@ app.post("/api/reservation-confirmation", async (req, res) => {
 });
 
 app.get("/reservations", async (req, res) => {
-  res.send("get method");
-  // try {
-  //   const findAllReservations = await ReservationTable.find();
-  //   if (findAllReservations) {
-  //     res.status(200).json(findAllReservations);
-  //   }
-  // } catch (error) {
-  //   console.log(error.message);
-  // }
+  try {
+    const findAllReservations = await ReservationTable.find();
+    if (findAllReservations) {
+      res.status(200).json(findAllReservations);
+    }
+  } catch (error) {
+    console.log(error.message);
+  }
 });
 
 //Method delete
