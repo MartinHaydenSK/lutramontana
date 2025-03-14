@@ -180,6 +180,9 @@ app.use(express.static(path.join(__dirname, "images")));
 //   }
 // });
 
+app.get("/", (req, res) => {
+  res.send("hello world");
+});
 //Methods get
 app.post("/reservation-confirmation", async (req, res) => {
   const {
