@@ -83,18 +83,18 @@ const footerForEmails = `
 </table>
 `;
 //Starting app
-const connectToDatabase = () => {
-  try {
-    mongoose.connect(dbPrefix);
+// const connectToDatabase = () => {
+//   try {
+//     mongoose.connect(dbPrefix);
 
-    app.listen(port, () => {
-      console.log("successfully connected to database");
-    });
-  } catch (error) {
-    console.log(error.message);
-  }
-};
-connectToDatabase();
+//     app.listen(port, () => {
+//       console.log("successfully connected to database");
+//     });
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// };
+// connectToDatabase();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "images")));
 
