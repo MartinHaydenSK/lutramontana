@@ -22,6 +22,8 @@ app.use(express.json());
 app.use(
   cors({
     origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
@@ -169,7 +171,6 @@ app.use(express.static(path.join(__dirname, "images")));
 
 app.get("/", (req, res) => {
   res.send("hello world");
-  console.log("nacitane");
 });
 //Methods get
 app.post("/reservation-confirmation", async (req, res) => {
@@ -334,7 +335,6 @@ app.post("/reservation-confirmation", async (req, res) => {
 
 app.get("/reservations", async (req, res) => {
   res.send("get method");
-
   // try {
   //   const findAllReservations = await ReservationTable.find();
   //   if (findAllReservations) {
