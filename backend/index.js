@@ -169,7 +169,7 @@ app.use(express.static(path.join(__dirname, "images")));
 //   }
 // });
 
-app.get("/", (req, res) => {
+app.get("/h", (req, res) => {
   res.send("hello world");
 });
 //Methods get
