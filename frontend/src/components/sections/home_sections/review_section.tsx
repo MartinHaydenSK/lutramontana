@@ -44,7 +44,7 @@ const ReviewSection: React.FC = () => {
   const getReviews = async () => {
     console.log(apiURL);
     try {
-      const response = await axios.get(`${apiURL}/get-reviews`, {
+      const response = await axios.get(`${apiURL}/api/get-reviews`, {
         withCredentials: true,
       });
       const data = await response.data;
