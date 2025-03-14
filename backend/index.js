@@ -19,7 +19,11 @@ const dbPrefix =
 const linkToBackend = "https://lutramontana-backend.vercel.app";
 const linkToFrontend = "https://lutramontana-frontend.vercel.app";
 app.use(express.json());
-app.use(cors({}));
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 //Transporter
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",

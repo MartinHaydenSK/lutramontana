@@ -191,9 +191,7 @@ const Calendar: React.FC<CalendarProps> = ({ reservationId }) => {
   };
   const getReservations = async () => {
     try {
-      const response = await axios.get(`${apiURL}/reservations`, {
-        withCredentials: true,
-      });
+      const response = await axios.get(`${apiURL}/reservations`);
       const data = response.data;
 
       if (data) {
