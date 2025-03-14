@@ -1,4 +1,9 @@
 {
+  "name": "backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "date-fns": "^4.1.0",
