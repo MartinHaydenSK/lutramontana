@@ -40,7 +40,7 @@ const Form: React.FC<FormProps> = () => {
     setPsc,
     setAdditionalNeeds,
   } = context!;
-
+  const apiURL = import.meta.env.VITE_API;
   //Reference
   const emailFormResponseRef = useRef<HTMLParagraphElement>(null);
 
@@ -147,7 +147,7 @@ const Form: React.FC<FormProps> = () => {
     try {
       setEmailResponseError(undefined);
       const response = await axios.post(
-        "api/reservation-confirmation",
+        `${apiURL}/reservation-confirmation`,
         dataForm
       );
       const responseData = response.data;

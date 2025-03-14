@@ -31,6 +31,8 @@ const FormUpdate: React.FC<FormUpdateProps> = ({ reservationId }) => {
     undefined
   );
 
+  const apiURL = import.meta.env.VITE_API;
+
   const updateReservation = async (e: any) => {
     e.preventDefault();
     setDateStartError(undefined);
@@ -54,7 +56,10 @@ const FormUpdate: React.FC<FormUpdateProps> = ({ reservationId }) => {
       };
       try {
         setEmailResponseError(undefined);
-        const response = await axios.post("api/update-reservation", dataForm);
+        const response = await axios.post(
+          `${apiURL}/update-reservation`,
+          dataForm
+        );
         console.log(response.status);
         if (response.status === 200) {
           const responseData = response.data;
