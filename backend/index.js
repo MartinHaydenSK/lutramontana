@@ -14,7 +14,7 @@ const DeletedReservationsTable = require("./databeses/deletedReservations");
 const ReviewsTable = require("./databeses/reviews");
 //Variables
 const app = express();
-sgMail.setApiKey(SENDGRID_API_KEY);
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const adminEmail = "martinhayden303@gmail.com";
 const dbPrefix =
