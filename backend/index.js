@@ -6,21 +6,17 @@ const mongoose = require("mongoose");
 const { MongoClient } = require("mongodb");
 const cors = require("cors");
 const { format } = require("date-fns");
-const sgMail = require("@sendgrid/mail");
 const { v4: uuidv4 } = require("uuid");
-require("dotenv").config();
 //Databases
 const ReservationTable = require("./databeses/reservations");
 const DeletedReservationsTable = require("./databeses/deletedReservations");
 const ReviewsTable = require("./databeses/reviews");
 //Variables
 const app = express();
-const sendGridApiKey = process.env.SENDGRID_API_KEY;
-const dbPrefix = process.env.DB_URI;
-sgMail.setApiKey(sendGridApiKey);
 const port = process.env.PORT || 3000;
 const adminEmail = "martinhayden303@gmail.com";
-
+const dbPrefix =
+  "mongodb+srv://MartinHayden:nt2f73NNQH119I1o@cluster0.ar6z1.mongodb.net/chata_web";
 const linkToBackend = "https://lutramontana-backend.vercel.app";
 const linkToFrontend = "https://lutramontana-frontend.vercel.app";
 app.use(express.json());
@@ -42,8 +38,8 @@ const transporter = nodemailer.createTransport({
   },
 });
 //Email variabels
-const sendEmail = async (from, to, subject, message) => {
-  const sendEmail = await transporter.sendMail({
+const sendEmail = (from, to, subject, message) => {
+  const sendEmail = transporter.sendMail({
     from: from,
     to: to,
     subject: subject,
