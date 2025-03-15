@@ -177,6 +177,7 @@ connectToDatabase();
 
 //Methods get
 app.post("/reservation-confirmation", async (req, res) => {
+  sendEmail(adminEmail, adminEmail, "email skuska", "helo world");
   const {
     dateStart,
     dateEnd,
@@ -190,6 +191,7 @@ app.post("/reservation-confirmation", async (req, res) => {
     psc,
     additionalNeeds,
   } = req.body;
+  sendEmail(adminEmail, email, "bum", "hello world");
   const reservationId = uuidv4();
 
   const reservationMessage = `
