@@ -14,8 +14,8 @@ const DeletedReservationsTable = require("./databeses/deletedReservations");
 const ReviewsTable = require("./databeses/reviews");
 //Variables
 const app = express();
-sgMail.send(SENDGRID_API_KEY);
-const port = process.env.PORT || 3000;
+sgMail.setApiKey(SENDGRID_API_KEY);
+
 const adminEmail = "martinhayden303@gmail.com";
 const dbPrefix =
   "mongodb+srv://MartinHayden:nt2f73NNQH119I1o@cluster0.ar6z1.mongodb.net/chata_web";
