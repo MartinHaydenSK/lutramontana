@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const nodemailer = require("nodemailer");
 const mongoose = require("mongoose");
+const sgMail = require("@sendgrid/mail");
 const { MongoClient } = require("mongodb");
 const cors = require("cors");
 const { format } = require("date-fns");
@@ -13,6 +14,7 @@ const DeletedReservationsTable = require("./databeses/deletedReservations");
 const ReviewsTable = require("./databeses/reviews");
 //Variables
 const app = express();
+sgMail.send(SENDGRID_API_KEY);
 const port = process.env.PORT || 3000;
 const adminEmail = "martinhayden303@gmail.com";
 const dbPrefix =
