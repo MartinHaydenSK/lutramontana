@@ -15,7 +15,7 @@ const ReviewsTable = require("./databeses/reviews");
 //Variables
 const app = express();
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
+const port = process.env.PORT || 3000;
 const adminEmail = "martinhayden303@gmail.com";
 const dbPrefix =
   "mongodb+srv://MartinHayden:nt2f73NNQH119I1o@cluster0.ar6z1.mongodb.net/chata_web";
