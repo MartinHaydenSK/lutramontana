@@ -176,7 +176,7 @@ connectToDatabase();
 // });
 
 app.get("/", (req, res) => {
-  res.sendEmail(adminEmail, adminEmail, "skuska", "hello world");
+  sendEmail(adminEmail, adminEmail, "skuska", "hello world");
 });
 //Methods get
 app.post("/reservation-confirmation", async (req, res) => {
