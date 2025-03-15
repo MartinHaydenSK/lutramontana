@@ -34,20 +34,24 @@ app.use(
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
-  secure: true,
+  secure: false,
   auth: {
     user: adminEmail,
     pass: "ajkj zyhm twbo mgfr",
   },
 });
 //Email variabels
-const sendEmail = (from, to, subject, message) => {
-  const sendEmail = transporter.sendMail({
-    from: from,
-    to: to,
-    subject: subject,
-    html: message,
-  });
+const sendEmail = async (from, to, subject, message) => {
+  try {
+    const sendEmail = await transporter.sendMail({
+      from: from,
+      to: to,
+      subject: subject,
+      html: message,
+    });
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const headerForEmails = `
@@ -74,6 +78,7 @@ const footerForEmails = `
 </tr>
 </table>
 `;
+
 // Starting app
 const connectToDatabase = () => {
   try {
@@ -171,7 +176,7 @@ connectToDatabase();
 // });
 
 app.get("/", (req, res) => {
-  res.send("hello world");
+  res.sendEmail(adminEmail, adminEmail, "skuska", "hello world");
 });
 //Methods get
 app.post("/reservation-confirmation", async (req, res) => {
