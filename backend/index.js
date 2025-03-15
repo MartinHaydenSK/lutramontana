@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const nodemailer = require("nodemailer");
 const mongoose = require("mongoose");
+const { MongoClient } = require("mongodb");
 const cors = require("cors");
 const { format } = require("date-fns");
 const { v4: uuidv4 } = require("uuid");
@@ -30,7 +31,7 @@ app.use(
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
-  secure: false,
+  secure: true,
   auth: {
     user: adminEmail,
     pass: "ajkj zyhm twbo mgfr",
