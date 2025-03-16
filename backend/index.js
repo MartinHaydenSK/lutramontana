@@ -43,14 +43,18 @@ const transporter = nodemailer.createTransport({
 //Email variabels
 const sendEmail = async (from, to, subject, message) => {
   try {
-    const sendEmail = await transporter.sendMail({
-      from: from,
+    const msg = {
       to: to,
+      from: from, // Môžete použiť svoju verifikovanú e-mailovú adresu v SendGrid
       subject: subject,
       html: message,
-    });
+    };
+
+    // Pošlite e-mail cez SendGrid
+    const response = await sgMail.send(msg);
+    console.log("Email sent successfully:", response);
   } catch (error) {
-    console.log(error);
+    console.error("Error sending email:", error);
   }
 };
 
@@ -93,6 +97,9 @@ const connectToDatabase = () => {
 };
 connectToDatabase();
 
+app.get("/", async (req, res) => {
+  sendEmail(adminEmail, adminEmail, "helo", "hello world");
+});
 //Methods post
 // app.post("/send-email", async (req, res) => {
 //   const {
@@ -191,7 +198,7 @@ app.post("/reservation-confirmation", async (req, res) => {
     psc,
     additionalNeeds,
   } = req.body;
-  sendEmail(adminEmail, email, "bum", "hello world");
+
   const reservationId = uuidv4();
 
   const reservationMessage = `
