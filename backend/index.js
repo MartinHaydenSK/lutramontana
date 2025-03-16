@@ -17,6 +17,7 @@ const app = express();
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const port = process.env.PORT || 3000;
 const adminEmail = "martinhayden303@gmail.com";
+const noReplayEmail = "noreplaylutramontana@gmail.com";
 const dbPrefix =
   "mongodb+srv://MartinHayden:nt2f73NNQH119I1o@cluster0.ar6z1.mongodb.net/chata_web";
 const linkToBackend = "https://lutramontana-backend.vercel.app";
@@ -184,7 +185,7 @@ app.get("/", async (req, res) => {
 
 //Methods get
 app.post("/reservation-confirmation", async (req, res) => {
-  sendEmail(adminEmail, adminEmail, "email skuska", "helo world");
+  sendEmail(noReplayEmail, adminEmail, "email skuska", "helo world");
   const {
     dateStart,
     dateEnd,
@@ -329,7 +330,7 @@ app.post("/reservation-confirmation", async (req, res) => {
     if (makeNewReservation) {
       sendEmail(adminEmail, email, "Rezrvácia pobytu", reservationMessage);
       sendEmail(
-        adminEmail,
+        noReplayEmail,
         adminEmail,
         "Nová rezervácia pobytu",
         reservationMessageAdmin
