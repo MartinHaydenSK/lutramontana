@@ -327,13 +327,18 @@ app.post("/reservation-confirmation", async (req, res) => {
       additionalNeeds,
     });
     if (makeNewReservation) {
-      sendEmail(
+      await sendEmail(
         noReplayEmail,
         adminEmail,
         "Nová rezervácia pobytu",
         reservationMessageAdmin
       );
-      sendEmail(adminEmail, email, "Rezrvácia pobytu", reservationMessage);
+      await sendEmail(
+        adminEmail,
+        email,
+        "Rezrvácia pobytu",
+        reservationMessage
+      );
 
       res
         .status(200)
