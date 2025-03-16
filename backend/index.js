@@ -185,7 +185,6 @@ app.get("/", async (req, res) => {
 
 //Methods get
 app.post("/reservation-confirmation", async (req, res) => {
-  sendEmail(noReplayEmail, adminEmail, "email skuska", "helo world");
   const {
     dateStart,
     dateEnd,
@@ -328,13 +327,14 @@ app.post("/reservation-confirmation", async (req, res) => {
       additionalNeeds,
     });
     if (makeNewReservation) {
-      sendEmail(adminEmail, email, "Rezrvácia pobytu", reservationMessage);
       sendEmail(
         noReplayEmail,
         adminEmail,
         "Nová rezervácia pobytu",
         reservationMessageAdmin
       );
+      sendEmail(adminEmail, email, "Rezrvácia pobytu", reservationMessage);
+
       res
         .status(200)
         .json(
