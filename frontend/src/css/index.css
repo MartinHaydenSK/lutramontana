@@ -61,6 +61,7 @@ textarea {
 }
 
 #root > main {
+  padding-top: 100.55px;
   height: fit-content;
 }
 

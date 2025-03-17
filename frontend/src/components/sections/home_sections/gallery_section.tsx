@@ -18,7 +18,11 @@ const GallerySection: React.FC = () => {
   ];
   return (
     <section className="gallery-image">
-      <ImageGallery items={images} />
+      <ImageGallery
+        items={images}
+        showFullscreenButton={false}
+        showPlayButton={false}
+      />
     </section>
   );
 };

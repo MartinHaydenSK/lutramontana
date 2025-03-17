@@ -60,6 +60,7 @@
 }
 
 .home .gallery-image {
+  max-height: 50svh;
   padding: 40px;
   background-image: url("/images/cabin_gallery_background_dva.JPEG");
   background-size: cover;
@@ -68,6 +69,7 @@
   filter: brightness(70%);
   /* background-color: var(--form-color); */
 }
+
 .home .review-section {
   height: 60vh;
   display: flex;

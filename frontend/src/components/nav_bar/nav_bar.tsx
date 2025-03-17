@@ -1,28 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AlertMessage from "../alertMessages/alert_message";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { faPersonHiking } from "@fortawesome/free-solid-svg-icons";
-import { faRectangleList } from "@fortawesome/free-solid-svg-icons";
-import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
-import { faComment } from "@fortawesome/free-solid-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHome,
+  faPersonHiking,
+  faRectangleList,
+  faCalendarDays,
+  faComment,
+  faBars,
+} from "@fortawesome/free-solid-svg-icons";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+
 const NavBar: React.FC = () => {
   const location = useLocation();
   const [clicked, setClicked] = useState<boolean>(false);
-  const [number, setNumber] = useState<number>(1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1000) {
+        setClicked(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const openMenu = () => {
-    if (number === 1) {
-      setClicked(true);
-      setNumber(2);
-    } else {
-      setClicked(false);
-      setNumber(1);
-    }
+    setClicked((prev) => !prev);
   };
 
   return (
@@ -32,13 +38,9 @@ const NavBar: React.FC = () => {
           <img
             src="/images/logo.png"
             style={{ width: "150px", padding: "0px", margin: "0px" }}
-            alt=""
+            alt="Logo"
           />
-          <FontAwesomeIcon
-            icon={faBars}
-            id="bars-icon"
-            onClick={() => openMenu()}
-          />
+          <FontAwesomeIcon icon={faBars} id="bars-icon" onClick={openMenu} />
         </span>
 
         <ul className={clicked ? "open-menu" : ""}>
