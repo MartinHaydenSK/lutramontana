@@ -630,7 +630,9 @@ app.get("/addReview", async (req, res) => {
   try {
     const findReview = await ReviewsTable.findOne({ reviewId });
     if (findReview) {
-      res.redirect(`${linkToFrontend}/?message=${"Recenzia už bola pridaná"}`);
+      res.redirect(
+        `${linkToFrontend}/#/?message=${"Recenzia už bola pridaná"}`
+      );
     } else {
       await ReviewsTable.create({
         reviewId,
@@ -641,7 +643,7 @@ app.get("/addReview", async (req, res) => {
       });
 
       res.redirect(
-        `${linkToFrontend}/?message=${"Recenzia bola úspešne pridaná"}`
+        `${linkToFrontend}/#/?message=${"Recenzia bola úspešne pridaná"}`
       );
     }
   } catch (error) {
@@ -657,10 +659,10 @@ app.get("/deleteReview/:reviewId", async (req, res) => {
     if (findReview) {
       await ReviewsTable.findOneAndDelete({ reviewId });
       res.redirect(
-        `${linkToFrontend}/?message=${"Recenzia bola úspešne odstránená"}`
+        `${linkToFrontend}/#/?message=${"Recenzia bola úspešne odstránená"}`
       );
     } else {
-      res.redirect(`${linkToFrontend}/?message=${"Recenzia sa nenašla"}`);
+      res.redirect(`${linkToFrontend}/#/?message=${"Recenzia sa nenašla"}`);
     }
   } catch (error) {
     console.log(error.message, "/deleteReview/:reviewId");
@@ -677,7 +679,7 @@ app.get("/get-reviews", async (req, res) => {
     }
   } catch (error) {
     if (error) {
-      res.redirect(`${linkToFrontend}/?message=${error.message}`);
+      res.redirect(`${linkToFrontend}/#/?message=${error.message}`);
     }
   }
 });
