@@ -98,9 +98,6 @@ const connectToDatabase = () => {
 };
 connectToDatabase();
 
-app.get("/", async (req, res) => {
-  sendEmail(adminEmail, adminEmail, "helo", "hello world");
-});
 //Methods post
 // app.post("/send-email", async (req, res) => {
 //   const {
@@ -424,9 +421,11 @@ app.get("/deleteReservation/:reservationId", async (req, res) => {
           `Zrušenie rezervácie`,
           deletedReservationMessageAdmin
         );
-        res.redirect(`${linkToFrontend}/?message=${"Rezervácia bola zrušená"}`);
+        res.redirect(
+          `${linkToFrontend}/#/?message=${"Rezervácia bola zrušená"}`
+        );
       } else {
-        res.redirect(`${linkToFrontend}/?message=${"Rezervácia sa nenašla"}`);
+        res.redirect(`${linkToFrontend}/#/?message=${"Rezervácia sa nenašla"}`);
       }
     } catch (error) {
       console.log(error.message, "requres: /deleteReservation/:reservationId ");
@@ -444,7 +443,7 @@ app.get("/updateReservation", async (req, res) => {
     console.log(findResevation);
     if (findResevation) {
       res.redirect(
-        `${linkToFrontend}/aktualizovanieRezervacie?reservationId=${
+        `${linkToFrontend}/#/aktualizovanieRezervacie?reservationId=${
           findResevation.reservationId
         }&dateStart=${findResevation.dateStart}&dateEnd=${
           findResevation.dateEnd
@@ -452,7 +451,7 @@ app.get("/updateReservation", async (req, res) => {
       );
     } else {
       res.redirect(
-        `${linkToFrontend}/aktualizovanieRezervacie?message=${"Rezervácia bola zrušená, preto ju nemôžete aktualizovať"}`
+        `${linkToFrontend}/#/aktualizovanieRezervacie?message=${"Rezervácia bola zrušená, preto ju nemôžete aktualizovať"}`
       );
     }
   } catch (error) {
