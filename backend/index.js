@@ -25,7 +25,7 @@ const linkToFrontend = "https://www.lutramontana.sk";
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://lutramontana-frontend.vercel.app", // Povolenie len pre frontend
+    origin: "https://www.lutramontana.sk", // Povolenie len pre frontend
     methods: "GET,POST,PUT,DELETE",
     allowedHeaders: "Content-Type, Authorization",
   })
