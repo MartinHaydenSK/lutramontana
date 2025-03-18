@@ -24,13 +24,13 @@ const AccommodationDetails: React.FC = () => {
           (data: AccommodationDetailsData, index: number) => (
             <motion.div
               key={index}
-              initial={{ opacity: opacityStart, x: locationStart }}
-              whileInView={{
-                opacity: opacityEnd,
-                x: locationEnd,
-                transition: { duration: duration },
-              }}
-              viewport={{ once: modeOnce, amount: modeAmount }}
+              // initial={{ opacity: opacityStart, x: locationStart }}
+              // whileInView={{
+              //   opacity: opacityEnd,
+              //   x: locationEnd,
+              //   transition: { duration: duration },
+              // }}
+              // viewport={{ once: modeOnce, amount: modeAmount }}
             >
               <span>
                 <h4>{data.title}</h4>

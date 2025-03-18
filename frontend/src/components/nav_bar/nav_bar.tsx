@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AlertMessage from "../alertMessages/alert_message";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
@@ -40,7 +41,11 @@ const NavBar: React.FC = () => {
             style={{ width: "150px", padding: "0px", margin: "0px" }}
             alt="Logo"
           />
-          <FontAwesomeIcon icon={faBars} id="bars-icon" onClick={openMenu} />
+          {!clicked ? (
+            <FontAwesomeIcon icon={faBars} id="bars-icon" onClick={openMenu} />
+          ) : (
+            <FontAwesomeIcon icon={faX} id="bars-icon" onClick={openMenu} />
+          )}
         </span>
 
         <ul className={clicked ? "open-menu" : ""}>
@@ -48,6 +53,7 @@ const NavBar: React.FC = () => {
             <FontAwesomeIcon icon={faHome} />
             <Link
               to="/"
+              onClick={() => setClicked((prev) => !prev)}
               className={location.pathname === "/" ? "active-link" : ""}
             >
               Domov
@@ -57,6 +63,7 @@ const NavBar: React.FC = () => {
             <FontAwesomeIcon icon={faPersonHiking} />
             <Link
               to="/aktivityokolie"
+              onClick={() => setClicked((prev) => !prev)}
               className={
                 location.pathname === "/aktivityokolie" ? "active-link" : ""
               }
@@ -68,6 +75,7 @@ const NavBar: React.FC = () => {
             <FontAwesomeIcon icon={faRectangleList} />
             <Link
               to="/cennik"
+              onClick={() => setClicked((prev) => !prev)}
               className={location.pathname === "/cennik" ? "active-link" : ""}
             >
               Cenník
@@ -77,6 +85,7 @@ const NavBar: React.FC = () => {
             <FontAwesomeIcon icon={faCalendarDays} />
             <Link
               to="/rezervovanie"
+              onClick={() => setClicked((prev) => !prev)}
               className={
                 location.pathname === "/rezervovanie" ? "active-link" : ""
               }
@@ -88,6 +97,7 @@ const NavBar: React.FC = () => {
             <FontAwesomeIcon icon={faComment} />
             <Link
               to="/kontakt"
+              onClick={() => setClicked((prev) => !prev)}
               className={location.pathname === "/kontakt" ? "active-link" : ""}
             >
               Kontakt

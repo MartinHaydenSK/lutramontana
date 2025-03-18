@@ -60,7 +60,6 @@
 }
 
 .home .gallery-image {
-  max-height: 50svh;
   padding: 40px;
   background-image: url("/images/cabin_gallery_background_dva.JPEG");
   background-size: cover;
@@ -68,6 +67,10 @@
   background-position: center;
   filter: brightness(70%);
   /* background-color: var(--form-color); */
+}
+
+.home .image-gallery {
+  height: 100% !important;
 }
 
 .home .review-section {
@@ -240,6 +243,11 @@
   }
 }
 
+@media (max-width: 900px) {
+  .home .hero-section article h1 {
+    font-size: 5rem;
+  }
+}
 @media (max-width: 800px) {
   .home .accommodation-details article > div span h4 {
     font-size: 24px;
