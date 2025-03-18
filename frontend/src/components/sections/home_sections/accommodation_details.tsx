@@ -22,16 +22,7 @@ const AccommodationDetails: React.FC = () => {
       <article>
         {AccommodationDetailsData.map(
           (data: AccommodationDetailsData, index: number) => (
-            <motion.div
-              key={index}
-              // initial={{ opacity: opacityStart, x: locationStart }}
-              // whileInView={{
-              //   opacity: opacityEnd,
-              //   x: locationEnd,
-              //   transition: { duration: duration },
-              // }}
-              // viewport={{ once: modeOnce, amount: modeAmount }}
-            >
+            <motion.div key={index}>
               <span>
                 <h4>{data.title}</h4>
                 <ul>
