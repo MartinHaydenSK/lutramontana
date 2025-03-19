@@ -1,7 +1,7 @@
 import React from "react";
 import AccommodationDetailsData from "../../../static_data/accommodation_details";
-import { motion } from "framer-motion";
-import { useState } from "react";
+// import { motion } from "framer-motion";
+// import { useState } from "react";
 interface AccommodationDetailsData {
   title: string;
   beds: string;
@@ -10,13 +10,13 @@ interface AccommodationDetailsData {
   image: string;
 }
 const AccommodationDetails: React.FC = () => {
-  const [duration] = useState<number>(1.5);
-  const [opacityStart] = useState<number>(0);
-  const [opacityEnd] = useState<number>(1);
-  const [locationStart] = useState<number>(50);
-  const [locationEnd] = useState<number>(0);
-  const [modeOnce] = useState<boolean>(true);
-  const [modeAmount] = useState<any>("some");
+  // const [duration] = useState<number>(1.5);
+  // const [opacityStart] = useState<number>(0);
+  // const [opacityEnd] = useState<number>(1);
+  // const [locationStart] = useState<number>(50);
+  // const [locationEnd] = useState<number>(0);
+  // const [modeOnce] = useState<boolean>(true);
+  // const [modeAmount] = useState<any>("some");
   return (
     <section className="accommodation-details">
       <article>
