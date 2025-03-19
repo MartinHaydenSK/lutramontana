@@ -29,7 +29,9 @@ const NavBar: React.FC = () => {
   }, []);
 
   const openMenu = () => {
-    setClicked((prev) => !prev);
+    if (window.innerWidth <= 1000) {
+      setClicked((prev) => !prev);
+    }
   };
 
   return (
@@ -53,7 +55,7 @@ const NavBar: React.FC = () => {
             <FontAwesomeIcon icon={faHome} />
             <Link
               to="/"
-              onClick={() => setClicked((prev) => !prev)}
+              onClick={() => openMenu()}
               className={location.pathname === "/" ? "active-link" : ""}
             >
               Domov
@@ -63,7 +65,7 @@ const NavBar: React.FC = () => {
             <FontAwesomeIcon icon={faPersonHiking} />
             <Link
               to="/aktivityokolie"
-              onClick={() => setClicked((prev) => !prev)}
+              onClick={() => openMenu()}
               className={
                 location.pathname === "/aktivityokolie" ? "active-link" : ""
               }
@@ -75,7 +77,7 @@ const NavBar: React.FC = () => {
             <FontAwesomeIcon icon={faRectangleList} />
             <Link
               to="/cennik"
-              onClick={() => setClicked((prev) => !prev)}
+              onClick={() => openMenu()}
               className={location.pathname === "/cennik" ? "active-link" : ""}
             >
               Cenník
@@ -85,7 +87,7 @@ const NavBar: React.FC = () => {
             <FontAwesomeIcon icon={faCalendarDays} />
             <Link
               to="/rezervovanie"
-              onClick={() => setClicked((prev) => !prev)}
+              onClick={() => openMenu()}
               className={
                 location.pathname === "/rezervovanie" ? "active-link" : ""
               }
@@ -97,7 +99,7 @@ const NavBar: React.FC = () => {
             <FontAwesomeIcon icon={faComment} />
             <Link
               to="/kontakt"
-              onClick={() => setClicked((prev) => !prev)}
+              onClick={() => openMenu()}
               className={location.pathname === "/kontakt" ? "active-link" : ""}
             >
               Kontakt
