@@ -24,14 +24,7 @@ interface ReviewSchema {
 const ReviewSection: React.FC = () => {
   //ENV
   const apiURL = import.meta.env.VITE_API;
-  //Animation variables
-  const [duration] = useState<number>(1.5);
-  const [opacityStart] = useState<number>(0);
-  const [opacityEnd] = useState<number>(1);
-  const [locationStart] = useState<number>(0);
-  const [locationEnd] = useState<number>(0);
-  const [modeOnce] = useState<boolean>(true);
-  const [modeAmount] = useState<any>("all");
+
   //Swiper variables
   const [slidesPerView, setSlidesPerView] = useState<number>(3);
   //Ref
@@ -86,17 +79,7 @@ const ReviewSection: React.FC = () => {
         {reviews &&
           reviews.map((review, index) => (
             <SwiperSlide style={{ minWidth: "200px", position: "relative" }}>
-              <motion.article
-                className="review-article"
-                key={index}
-                initial={{ opacity: opacityStart, y: locationStart }}
-                whileInView={{
-                  opacity: opacityEnd,
-                  y: locationEnd,
-                  transition: { duration: duration },
-                }}
-                viewport={{ once: modeOnce, amount: modeAmount }}
-              >
+              <motion.article className="review-article" key={index}>
                 {index !== activeIndex && (
                   <div className="blur-at-review-article"></div>
                 )}

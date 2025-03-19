@@ -12,7 +12,7 @@ const PriceList: React.FC = () => {
   const [locationStart] = useState<number>(50);
   const [locationEnd] = useState<number>(0);
   const [modeOnce] = useState<boolean>(true);
-  const [modeAmount] = useState<any>(0.2);
+  const [modeAmount] = useState<any>("some");
   return (
     <>
       <section className="price-list">

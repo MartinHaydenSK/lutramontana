@@ -150,7 +150,6 @@
   align-content: center;
   justify-content: center;
   gap: 20px;
-  background-color: red;
   /* background-color: var(--selected-color-form); */
 }
 

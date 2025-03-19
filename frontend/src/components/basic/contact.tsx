@@ -13,7 +13,7 @@ const Contact = () => {
   const [locationStart] = useState<number>(-60);
   const [locationEnd] = useState<number>(0);
   const [modeOnce] = useState<boolean>(true);
-  const [modeAmount] = useState<any>("all");
+  const [modeAmount] = useState<any>("some");
   return (
     <section className="contact">
       <motion.article
