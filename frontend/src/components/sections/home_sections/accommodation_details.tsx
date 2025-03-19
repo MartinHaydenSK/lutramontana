@@ -22,7 +22,7 @@ const AccommodationDetails: React.FC = () => {
       <article>
         {AccommodationDetailsData.map(
           (data: AccommodationDetailsData, index: number) => (
-            <motion.div key={index}>
+            <div key={index}>
               <span>
                 <h4>{data.title}</h4>
                 <ul>
@@ -35,7 +35,7 @@ const AccommodationDetails: React.FC = () => {
                 className="container-image"
                 style={{ backgroundImage: `url(${data.image})` }}
               ></div>
-            </motion.div>
+            </div>
           )
         )}
       </article>
