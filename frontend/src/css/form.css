@@ -170,13 +170,7 @@ form p {
   }
 }
 
-@media (max-width: 400px) {
-  form {
-    border-radius: 10px;
-    min-width: 0px;
-    width: 100%;
-  }
-
+@media (max-width: 500px) {
   .review-form {
     margin: 0;
     padding: 0px;
@@ -185,6 +179,26 @@ form p {
   .review-form form {
     width: 100%;
     min-width: 0;
+  }
+
+  .review-form form .row {
+    margin-left: 0;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .review-form form .row span:nth-child(2) {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  form {
+    border-radius: 10px;
+    min-width: 0px;
+    width: 100%;
   }
 
   form article .row {

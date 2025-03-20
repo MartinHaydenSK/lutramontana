@@ -90,4 +90,9 @@ footer section article div {
     justify-content: center;
     align-items: center;
   }
+
+  footer section .social-media-section-footer div p {
+    text-align: center;
+    width: 100%;
+  }
 }

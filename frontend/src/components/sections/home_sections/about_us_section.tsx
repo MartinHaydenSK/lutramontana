@@ -19,10 +19,10 @@ const AboutUsSection: React.FC = () => {
   const [duration] = useState<number>(1.5);
   const [opacityStart] = useState<number>(0);
   const [opacityEnd] = useState<number>(1);
-  const [locationStart] = useState<number>(-100);
+  const [locationStart] = useState<number>(-40);
   const [locationEnd] = useState<number>(0);
   const [modeOnce] = useState<boolean>(true);
-  const [modeAmount] = useState<any>("all");
+  const [modeAmount] = useState<any>("some");
 
   return (
     <section className="about-us">
