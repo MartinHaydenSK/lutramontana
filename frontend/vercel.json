@@ -1,9 +1,3 @@
 {
-  "version": 2,
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "lutramontana-backend.vercel.app"
-    }
-  ]
+  "version": 2
 }
