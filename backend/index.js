@@ -17,6 +17,7 @@ const app = express();
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const port = process.env.PORT || 3000;
 const adminEmail = "martinhayden303@gmail.com";
+const reviewsEmail = "lutramontanarecenzie@gmail.com";
 const noReplayEmail = "noreplaylutramontana@gmail.com";
 const dbPrefix =
   "mongodb+srv://MartinHayden:nt2f73NNQH119I1o@cluster0.ar6z1.mongodb.net/chata_web";
@@ -416,7 +417,7 @@ app.get("/deleteReservation/:reservationId", async (req, res) => {
         );
 
         sendEmail(
-          adminEmail,
+          noReplayEmail,
           adminEmail,
           `Zrušenie rezervácie`,
           deletedReservationMessageAdmin
@@ -440,7 +441,6 @@ app.get("/updateReservation", async (req, res) => {
       reservationId: req.query.reservationId,
     });
 
-    console.log(findResevation);
     if (findResevation) {
       res.redirect(
         `${linkToFrontend}/#/aktualizovanieRezervacie?reservationId=${
@@ -573,7 +573,7 @@ app.post("/update-reservation", async (req, res) => {
       );
 
       await sendEmail(
-        adminEmail,
+        noReplayEmail,
         adminEmail,
         "Zmena dátumu rezervácie",
         reservationMessageAdmin
@@ -617,7 +617,7 @@ app.post("/sennd-review-email", async (req, res) => {
   `;
   try {
     if (messageAdminReview) {
-      sendEmail(adminEmail, adminEmail, "Recenzia", messageAdminReview);
+      sendEmail(noReplayEmail, reviewsEmail, "Recenzia", messageAdminReview);
       res.status(200).json("Recenzia bola úspešne poslaná");
     }
   } catch (error) {

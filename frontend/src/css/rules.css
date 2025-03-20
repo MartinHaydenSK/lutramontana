@@ -16,7 +16,10 @@
   align-items: center;
   gap: 50px;
 }
-
+.rules h1 {
+  text-align: center;
+  width: 100vw;
+}
 .rules article p {
   text-align: center;
 }
