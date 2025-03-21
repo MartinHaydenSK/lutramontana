@@ -19,6 +19,7 @@ const AccommodationDetails: React.FC = () => {
   // const [modeAmount] = useState<any>("some");
   return (
     <section className="accommodation-details">
+      <h2>Typy izieb</h2>
       <article>
         {AccommodationDetailsData.map(
           (data: AccommodationDetailsData, index: number) => (

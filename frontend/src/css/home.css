@@ -298,8 +298,8 @@
   }
   .home .accommodation-details article > div {
     flex-direction: column;
-    min-width: fit-content;
-    padding: 10px;
+    min-width: 340px;
+    padding: 0px;
     min-height: 530.2px;
     margin: 10px;
     height: fit-content;
