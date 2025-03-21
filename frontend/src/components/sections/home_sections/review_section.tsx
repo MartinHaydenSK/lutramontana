@@ -35,13 +35,11 @@ const ReviewSection: React.FC = () => {
   const [swiperKey, setSwiperKey] = useState<number>(0);
   //Get reviews
   const getReviews = async () => {
-    console.log(apiURL);
     try {
       const response = await axios.get(`${apiURL}/get-reviews`);
       const data = await response.data;
       if (data) {
         setReviews(data);
-        console.log(data, "data");
         setSwiperKey((prev) => prev + 1);
       }
     } catch (error) {
@@ -52,9 +50,16 @@ const ReviewSection: React.FC = () => {
   //UseEffects
   useEffect(() => {
     getReviews();
-    if (window.innerWidth <= 730) {
-      setSlidesPerView(1);
-    }
+    const handleResize = () => {
+      if (window.innerWidth <= 730) {
+        setSlidesPerView(1);
+      } else if (window.innerWidth > 730) {
+        setSlidesPerView(3);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
