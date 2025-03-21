@@ -62,11 +62,11 @@
   font-family: "title-font";
 }
 
-.rdp-root .rdp-footer button:hover {
+/* .rdp-root .rdp-footer button:hover {
   transition: all ease-in 0.2s;
   background-color: var(--nav-bar-color);
   color: white;
-}
+} */
 .rdp-root .rdp-day button {
   font-size: 16px;
 }
@@ -165,7 +165,7 @@
 
 .rdp-root table td button {
   height: 60px;
-  color: red;
+  color: black;
 }
 
 /* Responsivity */
@@ -209,18 +209,22 @@
     justify-content: center;
     align-items: center;
   }
+
+  .calendar {
+    gap: 20px;
+  }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 360px) {
   .rdp-root {
     padding: 10px;
     width: 100%;
   }
 
-  .rdp-root .rdp-root table {
-    width: 100%;
+  .rdp-root table {
     height: 290px;
     border-spacing: 0px;
+    width: 100%;
   }
 
   .rdp-root th {
