@@ -51,9 +51,9 @@ const ReviewSection: React.FC = () => {
   useEffect(() => {
     getReviews();
     const handleResize = () => {
-      if (window.innerWidth <= 730) {
+      if (window.innerWidth <= 1000) {
         setSlidesPerView(1);
-      } else if (window.innerWidth > 730) {
+      } else if (window.innerWidth > 1000) {
         setSlidesPerView(3);
       }
     };
